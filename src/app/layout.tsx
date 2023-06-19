@@ -7,14 +7,17 @@ const lato = Lato({
 });
 
 export const metadata = {
-  title: 'TaskUnity',
-  description:
-    'TaskUnity - Streamline Your Tasks and Boost Productivity with Our Powerful Task Management App. Create Boards, Sections, and Tasks for Efficient Organization. Stay on Top of Deadlines and Collaborate Seamlessly. Download Now and Take Control of Your Workflow!',
+  title: 'Habit Tracker',
+  description: 'Habit Tracker - ',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={lato.className} suppressHydrationWarning={true}>
         {children}
       </body>
