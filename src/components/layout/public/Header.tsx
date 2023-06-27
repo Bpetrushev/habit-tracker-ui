@@ -1,26 +1,39 @@
 'use client';
 import { useState } from 'react';
+
 import Logo from '@/components/layout/ui/Logo';
 
-import { MenuIcon, DropDown } from '@/components/layout/ui/MenuPublic';
+import {
+  MenuIcon,
+  DropDown,
+  StandardNavigation,
+} from '@/components/layout/ui/MenuPublic';
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
 
-  const handleShowMobileMenu = (): void => {
+  const closeMobileMenu = (): void => {
+    if (showMobileMenu) {
+      setShowMobileMenu(false);
+    }
+  };
+
+  const handleChangeMobileMenu = (): void => {
     setShowMobileMenu(!showMobileMenu);
   };
 
   return (
     <>
-      <div className='flex items-center justify-between mx-4 mb-10 mt-5 z-30 relative'>
-        <Logo />
+      <div className='flex items-center justify-between mx-4 pb-5 mt-5 z-30 relative md:max-w-5xl md:mx-auto'>
+        <Logo onClick={closeMobileMenu} />
         <MenuIcon
           showMobileMenu={showMobileMenu}
-          handleShowMobileMenu={handleShowMobileMenu}
+          handleShowMobileMenu={handleChangeMobileMenu}
         />
+        <StandardNavigation />
       </div>
-      <DropDown isVisible={showMobileMenu} />
+      <div className='border-b-2 mb-5' />
+      <DropDown isVisible={showMobileMenu} onClick={closeMobileMenu} />
     </>
   );
 };

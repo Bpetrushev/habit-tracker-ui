@@ -21,7 +21,7 @@ const MenuIcon = ({
   const genericHamburgerLine = `h-9 w-9 my-1 rounded-full bg-green-600 transition ease transform duration-300`;
   return (
     <button
-      className='flex flex-col h-9 w-9 rounded justify-center items-center group'
+      className='flex flex-col h-9 w-9 rounded justify-center items-center group md:hidden'
       onClick={() => handleShowMobileMenu()}
     >
       <div
